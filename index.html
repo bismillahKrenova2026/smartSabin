@@ -1,0 +1,214 @@
+apakah ini dummy web <!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Smart Sabin Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-950 text-gray-200">
+
+<header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+<h1 class="text-xl font-bold text-green-400">🌱 Smart Sabin</h1>
+
+<nav class="space-x-6 text-gray-400">
+<a href="#" class="hover:text-green-400">Dashboard</a>
+<a href="#" class="hover:text-green-400">Sensors</a>
+<a href="#" class="hover:text-green-400">Analytics</a>
+<a href="#" class="hover:text-green-400">System</a>
+</nav>
+</div>
+</header>
+
+<main class="max-w-7xl mx-auto p-6">
+
+<div class="mb-10" data-aos="fade-down">
+<h2 class="text-3xl font-bold">Smart Agriculture Monitoring</h2>
+<p class="text-gray-400">Realtime monitoring sistem pertanian berbasis IoT</p>
+</div>
+
+<!-- SENSOR CARDS -->
+<div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
+<p class="text-gray-400">pH Air</p>
+<p class="text-4xl font-bold text-green-400" id="phAir">6.8</p>
+</div>
+
+<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
+<p class="text-gray-400">pH Tanah</p>
+<p class="text-4xl font-bold" id="phTanah">6.5</p>
+</div>
+
+<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
+<p class="text-gray-400">Suhu Udara</p>
+<p class="text-4xl font-bold text-orange-400" id="suhuUdara">28°C</p>
+</div>
+
+<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
+<p class="text-gray-400">Kelembaban Tanah</p>
+<p class="text-4xl font-bold text-blue-400" id="kelembabanTanah">70%</p>
+</div>
+
+</div>
+
+<!-- CHART -->
+<div class="grid lg:grid-cols-3 gap-6 mt-12">
+
+<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+<h3 class="text-lg font-semibold mb-4">📊 Grafik pH Air</h3>
+<canvas id="phChart"></canvas>
+</div>
+
+<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+<h3 class="text-lg font-semibold mb-4">🌡 Grafik Suhu</h3>
+<canvas id="tempChart"></canvas>
+</div>
+
+<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+<h3 class="text-lg font-semibold mb-4">💧 Kelembaban Tanah</h3>
+<canvas id="soilChart"></canvas>
+</div>
+
+</div>
+
+<!-- HISTORY -->
+<div class="mt-12">
+
+<h3 class="text-xl font-semibold mb-4">📋 Riwayat Sensor Terbaru</h3>
+
+<div class="overflow-x-auto bg-gray-900 border border-gray-800 rounded-xl shadow-lg">
+
+<table id="sensorTable" class="w-full text-sm text-gray-300">
+
+<thead class="bg-gray-800 text-gray-400 uppercase text-xs">
+<tr>
+<th class="p-4 text-left">Waktu</th>
+<th class="p-4">pH Air</th>
+<th class="p-4">pH Tanah</th>
+<th class="p-4">Suhu</th>
+<th class="p-4">Kelembaban</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="p-4 text-gray-400">
+Baru
+<span class="block text-[10px] text-gray-600" id="timeNow"></span>
+</td>
+
+<td class="p-4 text-center font-mono" id="t_phAir">6.8</td>
+<td class="p-4 text-center font-mono" id="t_phTanah">6.5</td>
+<td class="p-4 text-center text-orange-400" id="t_suhu">28°C</td>
+<td class="p-4 text-center text-blue-400" id="t_kelembaban">70%</td>
+
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+
+<!-- REKOMENDASI -->
+<div class="mt-12 bg-gray-900 border border-gray-800 rounded-xl shadow-lg p-6">
+
+<h3 class="text-xl font-semibold mb-4">🌾 Analisis Tanaman</h3>
+
+<div class="space-y-4">
+
+<p class="text-gray-400">
+Rekomendasi Tanaman :
+<span id="rekomTanaman" class="text-green-400 font-bold">Padi</span>
+</p>
+
+<p class="text-gray-400">
+Status Servo :
+<span id="statusServo" class="text-blue-400 font-bold">ON</span>
+</p>
+
+<p class="text-gray-400">
+Target pH :
+<span id="targetPh" class="text-yellow-400 font-bold">6.5</span>
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="border-t border-gray-800 mt-12">
+<div class="max-w-7xl mx-auto p-6 text-center text-gray-500">
+© 2026 Smart Sabin Monitoring System
+</div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:1000});
+</script>
+
+<script>
+
+function random(min,max){
+return (Math.random()*(max-min)+min).toFixed(1)
+}
+
+const phChart = new Chart(document.getElementById('phChart'),{
+type:'bar',
+data:{labels:['pH Air'],datasets:[{label:'pH Air',data:[6.8],backgroundColor:'#22c55e'}]}
+})
+
+const tempChart = new Chart(document.getElementById('tempChart'),{
+type:'bar',
+data:{labels:['Suhu'],datasets:[{label:'Suhu',data:[28],backgroundColor:'#fb923c'}]}
+})
+
+const soilChart = new Chart(document.getElementById('soilChart'),{
+type:'bar',
+data:{labels:['Kelembaban'],datasets:[{label:'Kelembaban',data:[70],backgroundColor:'#38bdf8'}]}
+})
+
+function updateDummy(){
+
+let phAir=random(6,7.5)
+let phTanah=random(5.5,7)
+let suhu=random(25,32)
+let kelembaban=random(60,90)
+
+document.getElementById('phAir').innerText=phAir
+document.getElementById('phTanah').innerText=phTanah
+document.getElementById('suhuUdara').innerText=suhu+"°C"
+document.getElementById('kelembabanTanah').innerText=kelembaban+"%"
+
+document.getElementById('t_phAir').innerText=phAir
+document.getElementById('t_phTanah').innerText=phTanah
+document.getElementById('t_suhu').innerText=suhu+"°C"
+document.getElementById('t_kelembaban').innerText=kelembaban+"%"
+
+document.getElementById('timeNow').innerText=new Date().toLocaleTimeString()
+
+phChart.data.datasets[0].data=[phAir]
+tempChart.data.datasets[0].data=[suhu]
+soilChart.data.datasets[0].data=[kelembaban]
+
+phChart.update()
+tempChart.update()
+soilChart.update()
+
+}
+
+setInterval(updateDummy,5000)
+updateDummy()
+
+</script>
+
+</body>
+</html>
