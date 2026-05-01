@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmonitor • Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { color-scheme: dark; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.12),_transparent_40%)]"></div>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center">
+                    <span class="text-emerald-400 text-lg font-bold">F</span>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold tracking-[0.25em] text-emerald-300 uppercase">Farmonitor</p>
+                    <p class="text-xs text-slate-400">Farm monitoring jarak jauh</p>
+                </div>
+            </a>
+            <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+                <a href="index.html" class="transition hover:text-white">Beranda</a>
+                <a href="login.html" class="text-white font-medium">Masuk</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="login.html" class="rounded-2xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">
+                    Masuk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="space-y-6">
+                <span class="inline-flex rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200">
+                    Akses khusus user terverifikasi
+                </span>
+                <h1 class="text-4xl font-bold tracking-tight text-white">
+                    Masuk untuk memantau lahan dan tanaman aktif.
+                </h1>
+                <p class="max-w-xl text-lg leading-8 text-slate-300">
+                    Login dipakai agar sesi user tersimpan. Setelah masuk, user akan diarahkan ke dashboard
+                    untuk melihat kondisi lahan, kualitas air, dan rekomendasi tanaman.
+                </p>
+            </div>
+
+            <div class="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-emerald-950/30 ring-1 ring-white/5">
+                <h2 class="text-2xl font-bold text-white">Login dashboard</h2>
+                <p class="mt-2 text-sm text-slate-400">
+                    Gunakan email dan kata sandi yang telah terdaftar.
+                </p>
+
+                <form onsubmit="doLogin(event)" class="mt-8 space-y-5">
+                    <div>
+                        <label class="mb-2 block text-sm font-medium text-slate-200">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            autofocus
+                            class="w-full rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none ring-0 transition placeholder:text-slate-500 focus:border-emerald-500/40 focus:ring-2 focus:ring-emerald-500/20"
+                            placeholder="bismillahkrenova@gmail.com"
+                        >
+                    </div>
+                    <div>
+                        <label class="mb-2 block text-sm font-medium text-slate-200">Kata sandi</label>
+                        <input
+                            type="password"
+                            id="password"
+                            required
+                            class="w-full rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none ring-0 transition placeholder:text-slate-500 focus:border-emerald-500/40 focus:ring-2 focus:ring-emerald-500/20"
+                            placeholder="••••••••"
+                        >
+                        <p id="error-msg" class="mt-2 text-sm text-rose-300 hidden">Email atau kata sandi salah.</p>
+                    </div>
+                    <label class="flex items-center gap-3 text-sm text-slate-300">
+                        <input type="checkbox" class="h-4 w-4 rounded border-white/20 bg-slate-900 text-emerald-500 focus:ring-emerald-500/20">
+                        Ingat sesi saya
+                    </label>
+                    <button type="submit" class="w-full rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-400">
+                        Masuk ke Dashboard
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-6 text-center text-sm text-slate-500">
+        © 2026 Farmonitor • Sistem pemantauan pertanian jarak jauh berbasis IoT
+    </footer>
+
+    <script>
+        function doLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            // Demo: any input goes to dashboard
+            if (email && password) {
+                window.location.href = 'dashboard.html';
+            } else {
+                document.getElementById('error-msg').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

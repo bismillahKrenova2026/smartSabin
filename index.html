@@ -1,208 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Smart Sabin Dashboard</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmonitor • Beranda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { color-scheme: dark; }
+    </style>
 </head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.18),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.12),_transparent_40%)]"></div>
 
-<body class="bg-gray-950 text-gray-200">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-2xl bg-emerald-500/20 flex items-center justify-center">
+                    <span class="text-emerald-400 text-lg font-bold">F</span>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold tracking-[0.25em] text-emerald-300 uppercase">Farmonitor</p>
+                    <p class="text-xs text-slate-400">Farm monitoring jarak jauh</p>
+                </div>
+            </a>
+            <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+                <a href="index.html" class="text-white font-medium">Beranda</a>
+                <a href="login.html" class="transition hover:text-white">Masuk</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="login.html" class="rounded-2xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">
+                    Masuk
+                </a>
+            </div>
+        </div>
+    </header>
 
-<header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-<h1 class="text-xl font-bold text-green-400">🌱 Smart Sabin</h1>
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
-</div>
-</header>
+        <!-- HERO -->
+        <section class="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200">
+                    <span>●</span> Pemantauan lahan, air, dan tanaman jarak jauh berbasis IoT
+                </div>
+                <div class="space-y-4">
+                    <h1 class="max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                        Memonitor lahan, air, dan tanaman dalam satu alur yang lebih rapi.
+                    </h1>
+                    <p class="max-w-2xl text-lg leading-8 text-slate-300">
+                        Website ini menjadi pintu masuk publik untuk mengenal proyek, membaca literasi tanaman, lalu masuk ke dashboard setelah login untuk memantau sensor, rekomendasi tanaman, dan kondisi air secara terpadu.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="login.html" class="rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-400">
+                        Masuk ke Dashboard
+                    </a>
+                    <a href="#literasi" class="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-100 transition hover:bg-white/10">
+                        Lihat Literasi Tanaman
+                    </a>
+                </div>
+            </div>
 
-<main class="max-w-7xl mx-auto p-6">
+            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-emerald-950/30 backdrop-blur-xl">
+                <div class="grid gap-4">
+                    <div class="rounded-3xl bg-slate-900/80 p-5 ring-1 ring-white/5">
+                        <p class="text-sm text-slate-400">Fokus Sistem</p>
+                        <p class="mt-2 text-xl font-semibold text-white">Rekomendasi tanaman + monitoring air</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-3xl bg-slate-900/80 p-5 ring-1 ring-white/5">
+                            <p class="text-sm text-slate-400">Sumber data</p>
+                            <p class="mt-2 font-semibold text-emerald-300">Blynk API</p>
+                        </div>
+                        <div class="rounded-3xl bg-slate-900/80 p-5 ring-1 ring-white/5">
+                            <p class="text-sm text-slate-400">Rekomendasi</p>
+                            <p class="mt-2 font-semibold text-sky-300">Spreadsheet API</p>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl bg-gradient-to-br from-emerald-500/15 to-sky-500/10 p-5 ring-1 ring-white/5">
+                        <p class="text-sm text-slate-300">Alur kerja</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-200">Login → baca kondisi lahan → pilih tanaman yang sesuai → sistem memantau tanaman aktif → air aman diteruskan, air tidak aman diproses lebih dulu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="mb-10" data-aos="fade-down">
-<h2 class="text-3xl font-bold">Smart Agriculture Monitoring</h2>
-<p class="text-gray-400">Realtime monitoring sistem pertanian berbasis IoT</p>
-</div>
+        <!-- FITUR -->
+        <section class="mt-16 grid gap-6 md:grid-cols-3">
+            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <p class="text-sm text-slate-400">01</p>
+                <h2 class="mt-2 text-xl font-semibold text-white">Pengenalan proyek</h2>
+                <p class="mt-3 text-slate-300">Halaman publik menampilkan konsep sistem, tujuan, dan alur kerja tanpa mengharuskan login terlebih dahulu.</p>
+            </div>
+            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <p class="text-sm text-slate-400">02</p>
+                <h2 class="mt-2 text-xl font-semibold text-white">Literasi tanaman</h2>
+                <p class="mt-3 text-slate-300">Pengunjung dapat membaca tanaman yang cocok, keunggulannya, serta kondisi lingkungan yang ideal.</p>
+            </div>
+            <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <p class="text-sm text-slate-400">03</p>
+                <h2 class="mt-2 text-xl font-semibold text-white">Dashboard terproteksi</h2>
+                <p class="mt-3 text-slate-300">Setelah login, user masuk ke dashboard untuk melihat saran tanaman, memantau air, dan memilih tanaman aktif.</p>
+            </div>
+        </section>
 
-<!-- SENSOR CARDS -->
-<div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- LITERASI TANAMAN -->
+        <section id="literasi" class="mt-16 space-y-6">
+            <div class="max-w-3xl">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">Literasi tanaman</p>
+                <h2 class="mt-2 text-3xl font-bold text-white">Tanaman yang bisa dipilih berdasarkan karakter lahan</h2>
+                <p class="mt-3 text-slate-300">Setiap tanaman dipadankan dengan kondisi pH, lingkungan ideal, dan kebutuhan air agar user bisa memilih dengan lebih percaya diri.</p>
+            </div>
 
-<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
-<p class="text-gray-400">pH Air</p>
-<p class="text-4xl font-bold text-green-400" id="phAir">6.8</p>
-</div>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <!-- PADI -->
+                <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 ring-1 ring-white/5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Lahan basah</span>
+                            <h3 class="mt-4 text-2xl font-bold text-white">Padi</h3>
+                        </div>
+                        <span class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">pH 5.5–6.5</span>
+                    </div>
+                    <p class="mt-4 leading-7 text-slate-300">Cocok untuk lahan dengan suplai air stabil, tekstur tanah lembap, dan pH cenderung netral ke sedikit asam.</p>
+                    <div class="mt-5 space-y-3">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Keunggulan</p>
+                            <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Stabil di lahan basah.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cocok untuk sistem irigasi terkontrol.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Menjadi pilihan utama untuk monitoring air.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Lingkungan ideal</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">Lahan tergenang terkontrol, suhu hangat, dan kelembaban cukup tinggi.</p>
+                        </div>
+                    </div>
+                </article>
 
-<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
-<p class="text-gray-400">pH Tanah</p>
-<p class="text-4xl font-bold" id="phTanah">6.5</p>
-</div>
+                <!-- CABAI -->
+                <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 ring-1 ring-white/5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Nilai jual tinggi</span>
+                            <h3 class="mt-4 text-2xl font-bold text-white">Cabai</h3>
+                        </div>
+                        <span class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">pH 5.8–6.8</span>
+                    </div>
+                    <p class="mt-4 leading-7 text-slate-300">Tanaman bernilai jual tinggi yang butuh air cukup, drainase baik, dan pengawasan pH lebih ketat.</p>
+                    <div class="mt-5 space-y-3">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Keunggulan</p>
+                            <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Permintaan pasar tinggi.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cocok untuk lahan yang terkontrol.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Baik untuk sistem otomatisasi pemantauan.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Lingkungan ideal</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">Drainase baik, sinar cukup, dan air tidak terlalu berlebihan.</p>
+                        </div>
+                    </div>
+                </article>
 
-<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
-<p class="text-gray-400">Suhu Udara</p>
-<p class="text-4xl font-bold text-orange-400" id="suhuUdara">28°C</p>
-</div>
+                <!-- TOMAT -->
+                <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 ring-1 ring-white/5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Adaptif</span>
+                            <h3 class="mt-4 text-2xl font-bold text-white">Tomat</h3>
+                        </div>
+                        <span class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">pH 5.5–7.0</span>
+                    </div>
+                    <p class="mt-4 leading-7 text-slate-300">Tumbuh baik pada lingkungan yang seimbang antara kelembaban, cahaya, dan pH tanah yang relatif stabil.</p>
+                    <div class="mt-5 space-y-3">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Keunggulan</p>
+                            <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cepat dipantau hasilnya.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cocok untuk lahan semi-terkontrol.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Bagus untuk demonstrasi sensor.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Lingkungan ideal</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">Cukup cahaya, tanah gembur, dan tidak terlalu tergenang.</p>
+                        </div>
+                    </div>
+                </article>
 
-<div class="bg-gray-900 border border-gray-800 p-5 rounded-xl shadow">
-<p class="text-gray-400">Kelembaban Tanah</p>
-<p class="text-4xl font-bold text-blue-400" id="kelembabanTanah">70%</p>
-</div>
+                <!-- SAWI -->
+                <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 ring-1 ring-white/5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Cepat panen</span>
+                            <h3 class="mt-4 text-2xl font-bold text-white">Sawi</h3>
+                        </div>
+                        <span class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">pH 6.0–7.0</span>
+                    </div>
+                    <p class="mt-4 leading-7 text-slate-300">Cepat panen dan cocok untuk sistem monitoring yang membutuhkan siklus uji singkat.</p>
+                    <div class="mt-5 space-y-3">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Keunggulan</p>
+                            <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cepat dipanen.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Mudah diamati pertumbuhannya.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cocok untuk uji coba rekomendasi tanaman.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Lingkungan ideal</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">Kelembaban cukup, drainase baik, dan intensitas cahaya sedang.</p>
+                        </div>
+                    </div>
+                </article>
 
-</div>
+                <!-- SELADA -->
+                <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 ring-1 ring-white/5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Sejuk & stabil</span>
+                            <h3 class="mt-4 text-2xl font-bold text-white">Selada</h3>
+                        </div>
+                        <span class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">pH 6.0–7.0</span>
+                    </div>
+                    <p class="mt-4 leading-7 text-slate-300">Cocok untuk lingkungan yang lebih sejuk, pH netral, dan kelembaban yang terjaga.</p>
+                    <div class="mt-5 space-y-3">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Keunggulan</p>
+                            <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Cocok untuk lahan modern.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Visualnya menarik untuk dashboard.</span></li>
+                                <li class="flex gap-2"><span class="text-emerald-400">•</span><span>Baik untuk demo sistem rekomendasi.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Lingkungan ideal</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">Suhu relatif sejuk, air terjaga, dan cahaya tidak terlalu ekstrem.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-<!-- CHART -->
-<div class="grid lg:grid-cols-3 gap-6 mt-12">
+    </main>
 
-<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
-<h3 class="text-lg font-semibold mb-4">📊 Grafik pH Air</h3>
-<canvas id="phChart"></canvas>
-</div>
-
-<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
-<h3 class="text-lg font-semibold mb-4">🌡 Grafik Suhu</h3>
-<canvas id="tempChart"></canvas>
-</div>
-
-<div class="bg-gray-900 border border-gray-800 p-6 rounded-xl">
-<h3 class="text-lg font-semibold mb-4">💧 Kelembaban Tanah</h3>
-<canvas id="soilChart"></canvas>
-</div>
-
-</div>
-
-<!-- HISTORY -->
-<div class="mt-12">
-
-<h3 class="text-xl font-semibold mb-4">📋 Riwayat Sensor Terbaru</h3>
-
-<div class="overflow-x-auto bg-gray-900 border border-gray-800 rounded-xl shadow-lg">
-
-<table id="sensorTable" class="w-full text-sm text-gray-300">
-
-<thead class="bg-gray-800 text-gray-400 uppercase text-xs">
-<tr>
-<th class="p-4 text-left">Waktu</th>
-<th class="p-4">pH Air</th>
-<th class="p-4">pH Tanah</th>
-<th class="p-4">Suhu</th>
-<th class="p-4">Kelembaban</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="p-4 text-gray-400">
-Baru
-<span class="block text-[10px] text-gray-600" id="timeNow"></span>
-</td>
-
-<td class="p-4 text-center font-mono" id="t_phAir">6.8</td>
-<td class="p-4 text-center font-mono" id="t_phTanah">6.5</td>
-<td class="p-4 text-center text-orange-400" id="t_suhu">28°C</td>
-<td class="p-4 text-center text-blue-400" id="t_kelembaban">70%</td>
-
-</tr>
-</tbody>
-
-</table>
-</div>
-</div>
-
-<!-- REKOMENDASI -->
-<div class="mt-12 bg-gray-900 border border-gray-800 rounded-xl shadow-lg p-6">
-
-<h3 class="text-xl font-semibold mb-4">🌾 Analisis Tanaman</h3>
-
-<div class="space-y-4">
-
-<p class="text-gray-400">
-Rekomendasi Tanaman :
-<span id="rekomTanaman" class="text-green-400 font-bold">Padi</span>
-</p>
-
-<p class="text-gray-400">
-Status Servo :
-<span id="statusServo" class="text-blue-400 font-bold">ON</span>
-</p>
-
-<p class="text-gray-400">
-Target pH :
-<span id="targetPh" class="text-yellow-400 font-bold">6.5</span>
-</p>
-
-</div>
-
-</div>
-
-</main>
-
-<footer class="border-t border-gray-800 mt-12">
-<div class="max-w-7xl mx-auto p-6 text-center text-gray-500">
-© 2026 Smart Sabin Monitoring System
-</div>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({duration:1000});
-</script>
-
-<script>
-
-function random(min,max){
-return (Math.random()*(max-min)+min).toFixed(1)
-}
-
-const phChart = new Chart(document.getElementById('phChart'),{
-type:'bar',
-data:{labels:['pH Air'],datasets:[{label:'pH Air',data:[6.8],backgroundColor:'#22c55e'}]}
-})
-
-const tempChart = new Chart(document.getElementById('tempChart'),{
-type:'bar',
-data:{labels:['Suhu'],datasets:[{label:'Suhu',data:[28],backgroundColor:'#fb923c'}]}
-})
-
-const soilChart = new Chart(document.getElementById('soilChart'),{
-type:'bar',
-data:{labels:['Kelembaban'],datasets:[{label:'Kelembaban',data:[70],backgroundColor:'#38bdf8'}]}
-})
-
-function updateDummy(){
-
-let phAir=random(6,7.5)
-let phTanah=random(5.5,7)
-let suhu=random(25,32)
-let kelembaban=random(60,90)
-
-document.getElementById('phAir').innerText=phAir
-document.getElementById('phTanah').innerText=phTanah
-document.getElementById('suhuUdara').innerText=suhu+"°C"
-document.getElementById('kelembabanTanah').innerText=kelembaban+"%"
-
-document.getElementById('t_phAir').innerText=phAir
-document.getElementById('t_phTanah').innerText=phTanah
-document.getElementById('t_suhu').innerText=suhu+"°C"
-document.getElementById('t_kelembaban').innerText=kelembaban+"%"
-
-document.getElementById('timeNow').innerText=new Date().toLocaleTimeString()
-
-phChart.data.datasets[0].data=[phAir]
-tempChart.data.datasets[0].data=[suhu]
-soilChart.data.datasets[0].data=[kelembaban]
-
-phChart.update()
-tempChart.update()
-soilChart.update()
-
-}
-
-setInterval(updateDummy,5000)
-updateDummy()
-
-</script>
-
+    <footer class="border-t border-white/10 py-6 text-center text-sm text-slate-500">
+        © 2026 Farmonitor • Sistem pemantauan pertanian jarak jauh berbasis IoT
+    </footer>
 </body>
 </html>

@@ -1,156 +1,31 @@
-# 🌱 Smart Sabin Dashboard (Dummy IoT Monitoring)
+# Farmonitor Preview
 
-Smart Sabin Dashboard adalah **prototype web dashboard** untuk monitoring sistem pertanian berbasis IoT.
-Project ini menampilkan **simulasi data sensor secara realtime** menggunakan JavaScript tanpa koneksi ke backend atau perangkat IoT.
+Folder ini berisi tampilan statis Farmonitor — 100% HTML murni, tanpa PHP, tanpa database, tanpa install apapun.
 
-Web ini dibuat sebagai **demo UI / dummy dashboard** sebelum dihubungkan dengan sensor asli seperti ESP32, Arduino, atau sistem database.
+## Cara membuka
 
----
+Cukup double-click salah satu file HTML di bawah ini:
 
-# 🚀 Features
+| File | Halaman |
+|------|---------|
+| `index.html` | Beranda / Landing Page |
+| `login.html` | Halaman Login |
+| `dashboard.html` | Dashboard (setelah login) |
+| `monitoring.html` | Monitoring Tanaman & IoT Control |
+| `recommendation.html` | Rekomendasi Tanaman AI |
 
-* 📊 Dashboard monitoring sensor pertanian
-* 🌡 Simulasi data suhu udara
-* 💧 Simulasi kelembaban tanah
-* 🧪 Simulasi pH air
-* 🌱 Simulasi pH tanah
-* 📈 Grafik realtime menggunakan Chart.js
-* 📋 Tabel riwayat sensor
-* 🌾 Analisis tanaman sederhana
-* 🎨 UI modern menggunakan TailwindCSS
-* ✨ Animasi menggunakan AOS
+## Navigasi
 
----
+- Dari **Beranda** → klik "Masuk ke Dashboard" → ke Login
+- Dari **Login** → isi email & password apapun → ke Dashboard
+- Dari **Dashboard** → navigasi ke Monitoring / Rekomendasi
+- Tombol **Keluar** → kembali ke Beranda
 
-# 📷 Preview
+## Fitur interaktif di preview
 
-Dashboard menampilkan beberapa komponen utama:
-
-1. **Sensor Cards**
-
-   * pH Air
-   * pH Tanah
-   * Suhu Udara
-   * Kelembaban Tanah
-
-2. **Realtime Charts**
-
-   * Grafik pH Air
-   * Grafik Suhu
-   * Grafik Kelembaban Tanah
-
-3. **Sensor History Table**
-
-   * Waktu update
-   * Data sensor terbaru
-
-4. **Plant Analysis**
-
-   * Rekomendasi tanaman
-   * Status servo
-   * Target pH
-
----
-
-# ⚙️ How It Works
-
-Data pada dashboard **bukan data sensor asli**.
-Semua nilai dihasilkan menggunakan fungsi JavaScript berikut:
-
-```
-function random(min,max){
- return (Math.random()*(max-min)+min).toFixed(1)
-}
-```
-
-Nilai sensor akan **diupdate setiap 5 detik** menggunakan:
-
-```
-setInterval(updateDummy,5000)
-```
-
-Sehingga dashboard terlihat seperti menerima data realtime.
-
----
-
-# 🧰 Technologies Used
-
-* HTML5
-* TailwindCSS
-* JavaScript
-* Chart.js
-* AOS Animation Library
-
----
-
-# 📂 Project Structure
-
-```
-smart-sabin-dashboard
-│
-├── index.html
-└── README.md
-```
-
-Karena ini adalah **dummy prototype**, semua kode berada dalam satu file HTML.
-
----
-
-# 🌐 How to Run
-
-1. Download atau clone repository ini
-
-```
-git clone https://github.com/bismilahKrenova2026/smartSabin.git
-```
-
-2. Buka file:
-
-```
-index.html
-```
-
-di browser.
-
-Tidak membutuhkan:
-
-* database
-* server
-* backend
-* instalasi tambahan
-
----
-
-# 🔌 Future Development
-
-Dashboard ini dapat dikembangkan menjadi **sistem IoT monitoring nyata** dengan menambahkan:
-
-* ESP32 
-* MQTT broker
-* REST API
-* Firebase / Realtime Database
-* Node.js backend
-
-Contoh alur sistem:
-
-```
-Sensor → ESP32 → Internet → API / Database → Dashboard
-```
-
----
-
-# 🎯 Purpose
-
-Project ini dibuat untuk:
-
-* Prototype IoT Agriculture Dashboard
-* UI/UX testing
-* Demo presentasi sistem Smart Farming
-* Belajar visualisasi data sensor
-
----
-
-# 👨‍💻 Author
-
-Smart Sabin Monitoring System
-2026
+- ✅ Navigasi antar halaman
+- ✅ Form login (input apapun → masuk ke dashboard)
+- ✅ Pilih tanaman aktif (highlight card berubah)
+- ✅ Reset tanaman
+- ✅ Tombol Control IoT (toast notification)
+- ✅ Simulasi Analisis AI (teks hasil muncul setelah 1.8 detik)
